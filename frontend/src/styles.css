@@ -1,0 +1,81 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: #ffffff;
+  color: #111111;
+}
+
+input,
+select,
+button {
+  font: inherit;
+}
+
+.field {
+  @apply w-full rounded-md border border-neutral-300 bg-white px-3 py-2 text-sm outline-none transition focus:border-black;
+}
+
+.label {
+  @apply mb-1 block text-xs font-semibold uppercase tracking-wide text-neutral-600;
+}
+
+.btn {
+  @apply inline-flex items-center justify-center gap-2 rounded-md border border-black bg-black px-4 py-2 text-sm font-semibold text-white transition hover:bg-white hover:text-black disabled:cursor-not-allowed disabled:border-neutral-300 disabled:bg-neutral-200 disabled:text-neutral-500;
+}
+
+.btn-light {
+  @apply inline-flex items-center justify-center gap-2 rounded-md border border-neutral-300 bg-white px-4 py-2 text-sm font-semibold text-black transition hover:border-black;
+}
+
+.panel {
+  @apply rounded-lg border border-neutral-200 bg-white;
+}
+
+.table-head {
+  @apply border-b border-neutral-200 bg-neutral-50 text-left text-xs font-semibold uppercase tracking-wide text-neutral-500;
+}
+
+.table-cell {
+  @apply border-b border-neutral-100 px-4 py-3 text-sm;
+}
+
+@media print {
+  body {
+    background: #ffffff;
+  }
+
+  header,
+  nav,
+  button,
+  .print\:hidden {
+    display: none !important;
+  }
+
+  main {
+    max-width: none !important;
+    padding: 0 !important;
+  }
+
+  .print-area {
+    display: block;
+  }
+
+  .print-area table {
+    min-width: 0 !important;
+    width: 100% !important;
+    font-size: 11px;
+  }
+
+  .print-area th,
+  .print-area td {
+    border: 1px solid #dddddd !important;
+    padding: 6px !important;
+  }
+}
